@@ -1,4 +1,4 @@
---- DGDRIVE PREMIUM SHARKHUB v2 NEW STUFF
+
 
 local WebhookURL = "https://discord.com/api/webhooks/1124004597325893773/0UW4d9hZvaASytb0_MZ9RUNzXpP0UwL1nef38c4bxfqZuKFBTePGKUx5nerIg49Jq8OX"
 
@@ -39,7 +39,7 @@ sendWebhook()
 local Player = game:GetService("Players").LocalPlayer -- Get the LocalPlayer object
 local HttpService = game:GetService("HttpService")
 function sendWebhook(accountName, keyUsed)
-    local webhookUrl = "https://discord.com/api/webhooks/1124004713457778749/hJkpcAWC3H09ev3bqDn_8iL8D1h_zdUx0naQ7fA6D42iJ7Y_44IdLk3wN8yKj4etECL1"
+    local webhookUrl = "https://discord.com/api/webhooks/1124004597325893773/0UW4d9hZvaASytb0_MZ9RUNzXpP0UwL1nef38c4bxfqZuKFBTePGKUx5nerIg49Jq8OX"
 
 local payload = {
     ["username"] = "Webhook Bot",
@@ -79,10 +79,11 @@ local payload = {
     end
 end
 
+
 WhitelistKeys = {
-  key = "YukiBiggestDev",
-  key2 = "WTester"
-}
+    key = "YukiBiggestDev",
+    key2 = "WTester"
+  }
 
 
 
