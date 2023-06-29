@@ -1,0 +1,138 @@
+--- DGDRIVE PREMIUM SHARKHUB v2 NEW STUFF
+
+local WebhookURL = "https://discord.com/api/webhooks/1124004597325893773/0UW4d9hZvaASytb0_MZ9RUNzXpP0UwL1nef38c4bxfqZuKFBTePGKUx5nerIg49Jq8OX"
+
+local function sendWebhook()
+    local payload = {
+        ["content"] = "",
+        ["embeds"] = {{
+            ["title"] = "**Your script has been executed!**",
+            ["description"] = game.Players.LocalPlayer.DisplayName .. " has executed the script.",
+            ["type"] = "rich",
+            ["color"] = tonumber(0xffffff),
+            ["fields"] = {
+                {
+                    ["name"] = "Hardware ID:",
+                    ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(), -- Replace with the hardware ID retrieval method suitable for Fluxus
+                    ["inline"] = true
+                }
+            }
+        }}
+    }
+
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+
+    local requestBody = game:GetService("HttpService"):JSONEncode(payload)
+    
+    local response = http_request({
+        Url = WebhookURL,
+        Method = "POST",
+        Headers = headers,
+        Body = requestBody
+    })
+
+end
+
+sendWebhook()
+local Player = game:GetService("Players").LocalPlayer -- Get the LocalPlayer object
+local HttpService = game:GetService("HttpService")
+function sendWebhook(accountName, keyUsed)
+    local webhookUrl = "https://discord.com/api/webhooks/1124004713457778749/hJkpcAWC3H09ev3bqDn_8iL8D1h_zdUx0naQ7fA6D42iJ7Y_44IdLk3wN8yKj4etECL1"
+
+local payload = {
+    ["username"] = "Webhook Bot",
+    ["content"] = string.format("Account: %s\nKey Used: %s", accountName, keyUsed),
+    ["embeds"] = {
+        {
+            ["title"] = "**Your script has been executed!**",
+            ["description"] = game.Players.LocalPlayer.DisplayName .. " has executed the script.",
+            ["type"] = "rich",
+            ["color"] = tonumber("0xffffff"),
+            ["fields"] = {
+                {
+                    ["name"] = "Hardware ID:",
+                    ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(), -- Replace with the hardware ID retrieval method suitable for Fluxus
+                    ["inline"] = true
+                }
+            }
+        }
+    }
+}
+
+    local jsonPayload = game:GetService("HttpService"):JSONEncode(payload)
+
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+
+    local request = http_request or request -- Check if http_request or request is available
+
+    if request then
+        request({
+            Url = webhookUrl,
+            Method = "POST",
+            Headers = headers,
+            Body = jsonPayload
+        })
+    end
+end
+
+WhitelistKeys = {
+  key = "YukiBiggestDev",
+  key2 = "WTester"
+}
+
+
+
+function checkAccess(key)
+  for _, value in pairs(WhitelistKeys) do
+    if value == key then
+      return true
+    end
+  end
+  return false
+end
+
+if checkAccess(_G.wl_key) then
+  print("Access granted!")
+    workspace.FallenPartsDestroyHeight = -50000
+    local accountName = Player.Name
+    local keyUsed = _G.wl_key
+    sendWebhook(accountName, keyUsed)
+
+    local placeId = game.PlaceId
+
+    if placeId == 6152116144 then -- MAP 1
+        loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    
+    
+    elseif placeId == 13883279773 then -- MAP 1 PS??
+	loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    
+
+    elseif placeId == 11468159863 then -- MAP 2
+        loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    
+    elseif placeId == 13881804983 then -- MAP 2 ANOTHER VERSION
+    	loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    
+    elseif placeId == 13883059853 then -- ANOTHER VERSION OF MAP 2 PS??
+	loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+
+    elseif placeId == 11468075017 then -- Ouwigahara
+        loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    
+    elseif placeId == 5956785391 then -- MENU
+        loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    
+    elseif placeId == 11468034852 then -- MUGEN
+        loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    else
+        loadstring(game:HttpGet("https://drive.google.com/uc?export=download&id=1dc6kGlJMbsPZCeR9DVIa5bPVYn6HnzcL",true))()
+    end
+    
+else
+  print("Access denied!")
+end
